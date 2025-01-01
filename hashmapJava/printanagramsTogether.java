@@ -1,4 +1,6 @@
-package hashmapJava;
+//GFG
+// Print Anagrams Together
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
