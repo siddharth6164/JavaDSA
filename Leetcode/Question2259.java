@@ -3,7 +3,7 @@
 import java.util.Arrays;
 import java.util.HashSet;
 
-public class countVowelStringsRanges {
+public class Question2259 {
     public static void main(String[] args) {
         String[] words = { "aba", "bcb", "ece", "aa", "e" };
         int[][] queries = { { 0, 2 }, { 1, 4 }, { 1, 1 } };

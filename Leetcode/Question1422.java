@@ -1,6 +1,6 @@
 //Leetcode
 //1422. Maximum Score After Splitting a String
-public class maxScoreSplittingString {
+public class Question1422 {
     public static void main(String[] args) {
         String s = "1111";
         int max = 0;
