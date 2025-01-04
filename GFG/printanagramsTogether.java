@@ -14,17 +14,17 @@ public class printanagramsTogether {
             char[] tmp = arr[i].toCharArray();
             Arrays.sort(tmp);
             String tempString = new String(tmp);
-            if(dic.containsKey(tmp)){
+            if (dic.containsKey(tmp)) {
                 List<String> anagrams = dic.get(tmp);
                 anagrams.add(arr[i]);
                 dic.put(tempString, anagrams);
-            }else{
+            } else {
                 List<String> anagrams = new ArrayList<>();
                 anagrams.add(arr[i]);
                 dic.put(tempString, anagrams);
             }
             List<List<String>> result = new ArrayList<>();
-            for(String s: dic.keySet()){
+            for (String s : dic.keySet()) {
                 result.add(dic.get(s));
             }
             // System.out.println(result);
