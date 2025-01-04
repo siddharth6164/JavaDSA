@@ -1,3 +1,4 @@
+
 // Leetcode
 // 2559. Count Vowel Strings in Ranges
 import java.util.Arrays;
@@ -15,13 +16,13 @@ public class Question2259 {
             String currentword = words[i];
             if (vowels.contains(currentword.charAt(0))
                     && vowels.contains(currentword.charAt(currentword.length() - 1))) {
-                    sum++;    
+                sum++;
             }
-            prefixSum[i] =sum;
+            prefixSum[i] = sum;
         }
-        for(int i=0;i<queries.length;i++) {
-            int[] currentQuery= queries[i];
-            ans[i]=prefixSum[currentQuery[1]]-(currentQuery[0]==0?0:prefixSum[currentQuery[0]-1]);
+        for (int i = 0; i < queries.length; i++) {
+            int[] currentQuery = queries[i];
+            ans[i] = prefixSum[currentQuery[1]] - (currentQuery[0] == 0 ? 0 : prefixSum[currentQuery[0] - 1]);
         }
         System.out.println(Arrays.toString(ans));
     }
