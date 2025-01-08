@@ -26,7 +26,7 @@ public class countTheNumberOfPossibleTriangles {
 
 	public static void main(String[] args) {
 		int[] arr = { 4, 6, 3, 7 };
-		int ans = countTriangles(arr);
-		System.out.println(ans);
+		int output = countTriangles(arr);
+		System.out.println(output);
 	}
 }
