@@ -1,3 +1,6 @@
+// GFG
+// Count the number of possible triangles
+
 import java.util.Arrays;
 
 public class countTheNumberOfPossibleTriangles {
