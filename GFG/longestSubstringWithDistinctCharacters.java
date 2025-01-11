@@ -1,3 +1,5 @@
+// GFG
+// Longest substring with distinct characters
 public class longestSubstringWithDistinctCharacters {
     public static int distinctCharcter(String s) {
         int n = s.length();
