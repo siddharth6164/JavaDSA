@@ -7,13 +7,11 @@ import java.util.List;
 
 public class Question802 {
     private static boolean[] safeNodes;
-    
-        private static boolean checkSafeState(List<List<Integer>> graph, int[] visited, int curr) {
-                    visited[curr] = 1; 
-                    boolean isSafe = true;
-            
-                    for (int neighbor : graph.get(curr)) {
-                        if (visited[neighbor] == 0) { 
+    private static boolean checkSafeState(List<List<Integer>> graph, int[] visited, int curr) {
+        visited[curr] = 1; 
+        boolean isSafe = true;
+        for (int neighbor : graph.get(curr)) {
+            if (visited[neighbor] == 0) { 
                             isSafe &= checkSafeState(graph, visited, neighbor);
                         } else if (visited[neighbor] == 1) { 
                             safeNodes[curr] = false;
