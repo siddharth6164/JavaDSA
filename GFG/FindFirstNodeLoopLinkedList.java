@@ -1,3 +1,5 @@
+// GFG
+// Find the first node of loop in linked list
 public class FindFirstNodeLoopLinkedList {
     static class Node
 {
