@@ -1,5 +1,8 @@
 // leetcode
 // 2364. Count Number of Bad Pairs
+
+import java.util.HashMap;
+
 public class Question2364 {
     public static long countBadPairs(int[] nums){
         long n = nums.length;
