@@ -1,3 +1,7 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeSet;
+
 public class Question2349 {
     class NumberContainers {
     private Map<Integer, Integer> indexNumber; 
