@@ -1,5 +1,12 @@
 // Leetcode
 // 2948. Make Lexicographically Smallest Array by Swapping Elements
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 public class Question2948 {
     public int[] lexicographicallySmallestArray(int[] nums, int limit) {
         int n = nums.length;
