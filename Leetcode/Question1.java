@@ -8,7 +8,7 @@
 
 import java.util.Arrays;
 
-public class Queation1 {
+public class Question1 {
     static int[] solution(int[] arr, int traget){
         for(int i=0; i<arr.length-1; i++){
             for(int j=i; i<arr.length; j++){
