@@ -1,7 +1,7 @@
 // Array Reverse
 import java.util.Arrays;
 
-public class ReverseArray {
+public class Question1 {
     static void reverseArray(int[] arr){
         int n = arr.length;
         int[] temp = new int[n];
