@@ -1,5 +1,4 @@
 // 88. Merge Sorted Array
-
 import java.util.Arrays;
 
 public class Question88 {
