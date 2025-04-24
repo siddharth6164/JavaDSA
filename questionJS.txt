@@ -1,0 +1,50 @@
+✅1️⃣ What is the difference between var, let, and const? 
+✅2️⃣ What is hoisting in JavaScript?                       
+✅3️⃣ Explain lexical scope with an example.
+4️⃣ Difference between function declarations and function expressions?
+✅5️⃣ What are arrow functions and how are they different?
+6️⃣ What is the value of this in different contexts?
+✅7️⃣ What are call, apply, and bind?
+✅8️⃣ Difference between == and ===?
+✅9️⃣ What is event bubbling and event capturing? --> bubbling(event move the buttom to top) | capturing(event move the top to buttom)
+✅🔟 What is the DOM and how is it manipulated?
+✅1️⃣1️⃣ Synchronous vs. asynchronous code
+✅1️⃣2️⃣ What is the Event Loop?
+✅1️⃣3️⃣ Microtasks vs. macrotasks
+✅1️⃣4️⃣ What is a callback function?
+✅1️⃣5️⃣ What is callback hell and how to avoid it?
+✅1️⃣6️⃣ What is a Promise in JavaScript?
+✅1️⃣7️⃣ How does async/await work? --> async is declare a function as asynchronous , it is automatically return the promise , it allows you to use await inside the function ,await is wait the promise are resolve or reject and it return the result.   
+✅1️⃣8️⃣ Shallow copy vs. deep copy
+1️⃣9️⃣ Difference between null, undefined, and NaN
+2️⃣0️⃣ What is a higher-order function?
+2️⃣1️⃣ What is a pure function?
+2️⃣2️⃣ What is immutability and how to achieve it?
+2️⃣3️⃣ What is the typeof operator?
+2️⃣4️⃣ What are template literals?
+2️⃣5️⃣ What is destructuring in JavaScript?
+2️⃣6️⃣ Spread syntax vs. rest parameters
+2️⃣7️⃣ for, for...in, and for...of — difference?
+2️⃣8️⃣ What is a closure?
+2️⃣9️⃣ What is currying in JavaScript?
+3️⃣0️⃣ What are default parameters?
+3️⃣1️⃣ Difference between map(), forEach(), and filter()
+3️⃣2️⃣ Falsy vs. truthy values
+3️⃣3️⃣ What is optional chaining (?.)
+3️⃣4️⃣ What is nullish coalescing (??)
+3️⃣5️⃣ What is a memory leak? How to avoid it?
+3️⃣6️⃣ What are WeakMap and WeakSet?
+3️⃣7️⃣ Stack vs. heap memory
+3️⃣8️⃣ Difference between debounce and throttle
+3️⃣9️⃣ How setTimeout & setInterval really work
+4️⃣0️⃣ Purpose of Promise.all, Promise.any, Promise.race
+4️⃣1️⃣ Difference between Object.freeze() and Object.seal()
+4️⃣2️⃣ Object.keys(), Object.values(), Object.entries()
+4️⃣3️⃣ How do JS modules work? (import/export)
+4️⃣4️⃣ What is an IIFE?
+4️⃣5️⃣ What is event delegation?
+4️⃣6️⃣ Deep equality vs. strict equality
+4️⃣7️⃣ How does the JS engine work internally?
+4️⃣8️⃣ bind() vs. arrow function for this
+4️⃣9️⃣ How to handle errors (try/catch/finally)
+5️⃣0️⃣ How does garbage collection work in JS?
