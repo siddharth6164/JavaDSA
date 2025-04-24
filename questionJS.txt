@@ -16,14 +16,14 @@
 ✅1️⃣6️⃣ What is a Promise in JavaScript?
 ✅1️⃣7️⃣ How does async/await work? --> async is declare a function as asynchronous , it is automatically return the promise , it allows you to use await inside the function ,await is wait the promise are resolve or reject and it return the result.   
 ✅1️⃣8️⃣ Shallow copy vs. deep copy
-1️⃣9️⃣ Difference between null, undefined, and NaN
-2️⃣0️⃣ What is a higher-order function?
-2️⃣1️⃣ What is a pure function?
+✅1️⃣9️⃣ Difference between null, undefined, and NaN
+✅2️⃣0️⃣ What is a higher-order function?
+2️⃣1️⃣ What is a pure function and Impure function? pure(Same input → same output) || Impure(Changes external state, Output depends on external value)
 2️⃣2️⃣ What is immutability and how to achieve it?
-2️⃣3️⃣ What is the typeof operator?
-2️⃣4️⃣ What are template literals?
+✅2️⃣3️⃣ What is the typeof operator? -->declare the data type 
+✅2️⃣4️⃣ What are template literals? -->Write multi-line strings (code)
 2️⃣5️⃣ What is destructuring in JavaScript?
-2️⃣6️⃣ Spread syntax vs. rest parameters
+✅2️⃣6️⃣ Spread syntax vs. rest parameters
 2️⃣7️⃣ for, for...in, and for...of — difference?
 2️⃣8️⃣ What is a closure?
 2️⃣9️⃣ What is currying in JavaScript?
