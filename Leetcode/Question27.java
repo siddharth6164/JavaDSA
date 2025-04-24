@@ -20,3 +20,4 @@ public class Question27 {
         System.out.println(Arrays.toString(nums));
     }
 }
+
