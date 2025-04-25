@@ -25,11 +25,11 @@
 2️⃣5️⃣ What is destructuring in JavaScript?
 ✅2️⃣6️⃣ Spread syntax vs. rest parameters
 2️⃣7️⃣ for, for...in, and for...of — difference?
-2️⃣8️⃣ What is a closure?
-2️⃣9️⃣ What is currying in JavaScript?
-3️⃣0️⃣ What are default parameters?
-3️⃣1️⃣ Difference between map(), forEach(), and filter()
-3️⃣2️⃣ Falsy vs. truthy values
+✅2️⃣8️⃣ What is a closure?
+✅2️⃣9️⃣ What is currying in JavaScript?
+✅3️⃣0️⃣ What are default parameters?
+✅3️⃣1️⃣ Difference between map(), forEach(), and filter()
+✅3️⃣2️⃣ Falsy vs. truthy values
 3️⃣3️⃣ What is optional chaining (?.)
 3️⃣4️⃣ What is nullish coalescing (??)
 3️⃣5️⃣ What is a memory leak? How to avoid it?
