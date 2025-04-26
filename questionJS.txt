@@ -30,13 +30,13 @@
 ✅3️⃣0️⃣ What are default parameters?
 ✅3️⃣1️⃣ Difference between map(), forEach(), and filter()
 ✅3️⃣2️⃣ Falsy vs. truthy values
-3️⃣3️⃣ What is optional chaining (?.)
-3️⃣4️⃣ What is nullish coalescing (??)
+✅3️⃣3️⃣ What is optional chaining (?.)
+✅3️⃣4️⃣ What is nullish coalescing (??)
 3️⃣5️⃣ What is a memory leak? How to avoid it?
 3️⃣6️⃣ What are WeakMap and WeakSet?
-3️⃣7️⃣ Stack vs. heap memory
+✅3️⃣7️⃣ Stack vs. heap memory
 3️⃣8️⃣ Difference between debounce and throttle
-3️⃣9️⃣ How setTimeout & setInterval really work
+✅3️⃣9️⃣ How setTimeout & setInterval really work
 4️⃣0️⃣ Purpose of Promise.all, Promise.any, Promise.race
 4️⃣1️⃣ Difference between Object.freeze() and Object.seal()
 4️⃣2️⃣ Object.keys(), Object.values(), Object.entries()
