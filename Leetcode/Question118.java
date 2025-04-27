@@ -14,6 +14,7 @@ public class Question118 {
             currList.add(1);
             for (int j = 1; j < i; j++) {
                 currList.add(arr.get(i - 1).get(j - 1) + arr.get(i - 1).get(j));
+                System.out.println(arr.get(i - 1).get(j-1));
             }
             currList.add(1);
             arr.add(currList);
