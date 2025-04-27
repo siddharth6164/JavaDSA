@@ -37,14 +37,14 @@
 ✅3️⃣7️⃣ Stack vs. heap memory
 3️⃣8️⃣ Difference between debounce and throttle
 ✅3️⃣9️⃣ How setTimeout & setInterval really work
-4️⃣0️⃣ Purpose of Promise.all, Promise.any, Promise.race
-4️⃣1️⃣ Difference between Object.freeze() and Object.seal()
-4️⃣2️⃣ Object.keys(), Object.values(), Object.entries()
+✅4️⃣0️⃣ Purpose of Promise.all, Promise.any, Promise.race
+✅4️⃣1️⃣ Difference between Object.freeze() and Object.seal()
+✅4️⃣2️⃣ Object.keys(), Object.values(), Object.entries() -->Object.keys(){given all key} ||Object.values(){given all values} || Object.entries(){given all key and value in pairs}
 4️⃣3️⃣ How do JS modules work? (import/export)
-4️⃣4️⃣ What is an IIFE?
+✅4️⃣4️⃣ What is an IIFE?
 4️⃣5️⃣ What is event delegation?
 4️⃣6️⃣ Deep equality vs. strict equality
 4️⃣7️⃣ How does the JS engine work internally?
 4️⃣8️⃣ bind() vs. arrow function for this
-4️⃣9️⃣ How to handle errors (try/catch/finally)
-5️⃣0️⃣ How does garbage collection work in JS?
+✅4️⃣9️⃣ How to handle errors (try/catch/finally)
+5️⃣0️⃣ How does garbage collection work in JS?-->JavaScript finds objects that are not used anymore. Then it removes them from memory automatically.
