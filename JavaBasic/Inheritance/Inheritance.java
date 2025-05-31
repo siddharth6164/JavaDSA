@@ -16,7 +16,7 @@ package Inheritance;
 public class Inheritance {
     public static void main(String[] args) {
         /*-----------------------> 1. Single Inheritance  <-----------------------*/
-        // SingleInheritance singleInheritance = new SingleInheritance();
+        SingleInheritance singleInheritance = new SingleInheritance();
         singleInheritance.child_propertie();
         singleInheritance.parent_propertie();
 
