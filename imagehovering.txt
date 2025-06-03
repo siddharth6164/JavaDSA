@@ -1,0 +1,250 @@
+import React, { useEffect, useRef, useState } from "react";
+import "./about.css";
+
+import hover1 from "../../assets/hover1.png";
+import hover2 from "../../assets/hover2.png";
+import hover3 from "../../assets/hover3.png";
+import hover4 from "../../assets/hover4.png";
+import hover5 from "../../assets/hover5.png";
+import hover6 from "../../assets/hover6.png";
+import hover7 from "../../assets/hover7.png";
+import hover8 from "../../assets/hover8.png";
+import hover9 from "../../assets/hover9.png";
+import hover10 from "../../assets/hover10.png";
+import hover11 from "../../assets/hover11.png";
+import hover12 from "../../assets/hover12.png";
+import hover13 from "../../assets/hover13.png";
+import hover14 from "../../assets/hover14.png";
+import hover15 from "../../assets/hover15.png";
+import hover16 from "../../assets/hover16.png";
+
+const IMG_WIDTH = 250;
+const IMG_HEIGHT = 250;
+
+const leftImages = [
+  { id: "hover1", src: hover1, top: 0, left: -10,width: 300, height: 390, rotate:30},
+  { id: "hover3", src: hover3, top: 120, left: -110,width: 350, height: 450, rotate:10},
+  { id: "hover5", src: hover5, top: 200, left: -85,width: 350, height: 480, rotate:0},
+  { id: "hover7", src: hover7, top: 430, left: -35,width: 350, height: 450, rotate:-10},
+  { id: "hover11", src: hover11, top: 710, left: 20,width: 250, height: 350, rotate:0},
+  { id: "hover9", src: hover9, top: 710, left: -10,width: 200, height: 280, rotate:90},
+  { id: "hover13", src: hover13, top: 1000, left: 0,width: 200, height: 250, rotate:0},
+  { id: "hover15", src: hover15, top: 1100, left: -10,width: 350, height: 360, rotate:0},
+];
+
+const rightImages = [
+  { id: "hover2", src: hover2, top: 0, left: 35,width: 250, height: 300, rotate:0},
+  { id: "hover6", src: hover6, top: 160, left: 15,width: 300, height:480, rotate:0},
+  { id: "hover8", src: hover8, top: 700, left: 50,width: 300, height: 480, rotate:0},
+  { id: "hover10", src: hover10, top: 520, left: 0,width: 250, height: 180, rotate:0},
+  { id: "hover4", src: hover4, top: 450, left: -50,width: 350, height: 580, rotate:0},
+  // { id: "hover12", src: hover12, top: 400, left: 0,width: 200, height: 180, rotate:0},
+  // { id: "hover14", src: hover14, top: 480, left: 0,width: 200, height: 180, rotate:0},
+  // { id: "hover16", src: hover16, top: 560, left: 0,width: 200, height: 180, rotate:0},
+];
+
+// Custom hook to load images into offscreen canvases for pixel transparency check
+function useImageCanvases(images) {
+  const canvasesRef = useRef({});
+
+  useEffect(() => {
+    images.forEach(({ id, src, width, height }) => {
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.src = src;
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, width, height);
+        ctx.drawImage(img, 0, 0, width, height);
+        canvasesRef.current[id] = canvas;
+      };
+    });
+  }, [images]);
+
+  return canvasesRef;
+}
+
+// Utility function to check if pixel at (x, y) in canvas is opaque enough
+function isPixelOpaque(canvas, x, y) {
+  if (!canvas) return false;
+  const ctx = canvas.getContext("2d");
+  const pixel = ctx.getImageData(x, y, 1, 1).data;
+  return pixel[3] > 10; // alpha channel threshold
+}
+
+// Reusable component for stacked hover images
+function HoverImageStack({ images }) {
+  const containerRef = useRef(null);
+  const canvases = useImageCanvases(images);
+  const [hoveredId, setHoveredId] = useState(null);
+
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+
+    const rect = containerRef.current.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    // Iterate from topmost image to bottom (last in array is on top)
+    for (let i = images.length - 1; i >= 0; i--) {
+      const { id, top, left ,width, height  } = images[i];
+      if (
+      mouseX >= left &&
+        mouseX < left + width &&
+        mouseY >= top &&
+        mouseY < top + height
+      ) {
+        const x = Math.floor(mouseX - left);
+        const y = Math.floor(mouseY - top);
+        if (isPixelOpaque(canvases.current[id], x, y)) {
+          if (hoveredId !== id) setHoveredId(id);
+          return;
+        }
+      }
+    }
+
+    if (hoveredId !== null) setHoveredId(null);
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={() => setHoveredId(null)}
+      style={{ position: "relative", width: 300, height: 1800 }}
+    >
+      {images.map(({ id, src, top, left,width, height,rotate }) => (
+        <img
+          key={id}
+          src={src}
+          alt={id}
+           width={width}
+          height={height}
+          draggable={false}
+          style={{
+            position: "absolute",
+            top,
+            left,
+            cursor: hoveredId === id ? "pointer" : "default",
+            filter: hoveredId === id ? "brightness(1.3)" : "brightness(1)",
+            transition: "filter 0.3s ease, transform 0.3s ease",
+            transform: hoveredId === id ? "scale(1.05)" : "scale(1)",
+            transform:`rotate(${rotate}deg)`,
+            userSelect: "none",
+            pointerEvents: "none", // Container handles all mouse events
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default function About() {
+  return (
+    <section className="about-container" style={{ display: "flex" ,overflow:"hidden"}}>
+      {/* Left stacked images */}
+      <HoverImageStack images={leftImages} />
+
+      {/* Center content */}
+      <div className="center-content" style={{ flex: 1, padding: "0 20px" }}>
+        <div className="Box1">
+          <div className="box1-details">
+            <h1>What is Saanvari?</h1>
+            <p>
+              Saanvari is a celebration of ancient skin rituals sculpted from
+              the timeless wisdom of Ayurveda. It is a brand born out of
+              reverence for nature’s purest gifts and the sacred beauty
+              practices that have been lovingly preserved through generations.
+              At its core, Saanvari is a ritual - a transformative journey to
+              radiant, healthy skin.
+            </p>
+          </div>
+        </div>
+        <div className="Box1">
+          <div className="box1-details">
+            <h1>Why was Saanvari sculpted?</h1>
+            <p>
+              In a world flooded with synthetic solutions, Saanvari was created
+              to revive and preserve the forgotten art of skin care rooted in
+              authenticity. We sculpted this brand to bring back the power of
+              nature’s rarest botanicals and hidden Ayurvedic secrets, offering
+              a genuine alternative that honors tradition and nurtures skin
+              naturally.
+            </p>
+          </div>
+        </div>
+        <div className="Box1">
+          <div className="box1-details">
+            <h1>Our USP</h1>
+            <p>
+              Rituals from the ancient era carefully revived for modern skincare
+              needs. Use of rare, unheard Ayurvedic ingredients sourced with
+              care and respect. Products crafted to offer a holistic skin
+              transformation, not just temporary beauty fixes. A perfect blend
+              of earth-born alchemy and Vedic wisdom to unlock your skin’s
+              natural radiance.
+            </p>
+          </div>
+        </div>
+        <div className="Box1">
+          <div className="box1-details">
+            <h1>What makes Saanvari different?</h1>
+            <p>
+              Unlike conventional Ayurvedic brands, Saanvari is rooted in
+              ancient Indian skin care rituals that have been lovingly preserved
+              through generations but are rarely found today. Our formulations
+              harness the power of rare and precious Indian botanicals such as
+              Licorice (Mulethi), Vetiver (Khus), Oud (Agarwood), Rose Petal
+              powders, and other sacred herbs. These ingredients, revered by
+              queens and healers of old, are known for their profound healing,
+              soothing, rejuvenating, and beautifying effects. At Saanvari, we
+              honor the time-tested techniques of ancient Ayurveda —
+              hand-crafted powder blends designed to work naturally with your
+              skin, bringing out its radiant glow without harmful chemicals or
+              artificial additives. Our powders absorb excess oil, deeply
+              cleanse pores, balance skin tone, and promote lasting nourishment,
+              making them far superior to conventional creams and synthetic
+              products. This authentic ritualistic approach revives the true
+              essence of Indian beauty traditions in every jar.
+            </p>
+          </div>
+        </div>
+        <div className="Box1">
+          <div className="box1-details">
+            <h1>Our Ingredient Story</h1>
+            <p>
+              At Saanvari, every ingredient tells a story — a story deeply
+              rooted in the sacred traditions of Indian Ayurveda and the
+              timeless beauty rituals of ancient queens. We carefully select
+              each herb and botanical not only for its purity but for its
+              profound ability to nurture and transform your skin.
+            </p>
+          </div>
+        </div>
+        <div className="Box1">
+          <div className="box1-details">
+            <h1>Why Powders?</h1>
+            <p>
+              Unlike creams and lotions that dilute the potency of herbs, our
+              pure powder formulations preserve the natural strength and healing
+              power of these ingredients. When activated with water or natural
+              extracts, they deeply penetrate the skin, offering gentle yet
+              powerful care rooted in ancient rituals.
+              <br />
+              <br />
+              At Saanvari, every jar holds the magic of these timeless
+              ingredients — a true ritual that transforms your skin naturally,
+              with purity, potency, and heritage.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Right stacked images */}
+      <HoverImageStack images={rightImages} />
+    </section>
+  );
+}
