@@ -19,12 +19,12 @@ public class Polymorphism {
     public static void main(String[] args) {
 
         // methods with the same name but different parameter types
-        // Overloading overloading = new Overloading();
-        // overloading.case1();
-        // overloading.case2();
-        // overloading.case3();
-        // overloading.case4();
-        // overloading.case5();
+        Overloading overloading = new Overloading();
+        overloading.case1();
+        overloading.case2();
+        overloading.case3();
+        overloading.case4();
+        overloading.case5();
 
         // methods and parameter are same name in superclass but extend different subclass
         Overriding overriding = new Overriding();
@@ -32,6 +32,6 @@ public class Polymorphism {
         overriding.case2();
         overriding.case3();
         overriding.case4();
-        
+
     }
 }
