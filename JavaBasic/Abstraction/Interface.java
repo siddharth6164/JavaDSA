@@ -11,10 +11,17 @@
 
 package Abstraction;
 
-interface Parent {
-    void a();
+// Basic Abstraction
+interface A {
+    public void a();
+}
+class MyClass implements A {
+    public void a(){}
 }
 
-public class Interface {
-
+public class Interface{
+    void caseone(){
+        //--------------------- Basic Abstraction ---------------------
+        MyClass 
+    }
 }
