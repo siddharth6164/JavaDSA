@@ -4,8 +4,6 @@
 // 2. Inteface          |->Fully abstract
 package Abstraction;
 
-
-
 public class Abstraction {
     public static void main(String[] args) {
         // 1. Abstract class
@@ -13,7 +11,11 @@ public class Abstraction {
         abstractclass.caseone();
 
         // 2. Inteface
-        
-
+        Interface interFace = new Interface();
+        interFace.caseone();
+        interFace.casetow();
+        interFace.casethree();
+        interFace.casefour();
+        interFace.casefive();
     }
 }
