@@ -59,10 +59,15 @@ class Casefour implements Serializable, Cloneable {
 }
 
 // --------------------- CASE 5 ---------------------
+/*-----------------------> java 8 default method AND static method <-----------------------*/
 interface CasefiveA {
     // override is possible to implement
     default void m1() {
-        System.out.println("Hello from default method");
+        System.out.println("Java 8 static method are implementations");
+    }
+
+    static void m2() {
+        System.out.println("Java 8 static method are implementations");
     }
 }
 
@@ -103,6 +108,7 @@ public class Interface {
         Casefour interface4 = new Casefour();
     }
 
+    /*-----------------------> java 8 default method AND static method <-----------------------*/
     void casefive() {
         Casefive interface5 = new Casefive();
         interface5.m1();
