@@ -12,7 +12,6 @@
 // |-> 3. Hierarchical Inheritance
 
 package Inheritance;
-
 public class Inheritance {
     public static void main(String[] args) {
         /*-----------------------> 1. Single Inheritance  <-----------------------*/
@@ -29,5 +28,7 @@ public class Inheritance {
         /*-----------------------> 3. Hierarchical Inheritance  <-----------------------*/
         HierarchicalInheritance hierarchicalInheritance = new HierarchicalInheritance();
         hierarchicalInheritance.callhierarchical();
+
+
     }
 }
